@@ -29,6 +29,7 @@ def item_amount(inventory, name):
         return inventory[name]
 
 def is_stocked(inventory, name):
+    name_exists = 0
     for key in inventory.keys():
         if key == name:
             name_exists = True
@@ -59,7 +60,7 @@ def in_history(inventory, name):
 def current_inventory(inventory):
     list1 = []
     for key in inventory.keys():
-        if key > 0:
+        if inventory[key] > 0:
             list1.append(key)
     return list1
 
@@ -67,4 +68,4 @@ def report(inventory):
     str1 = ''
     for key in inventory.keys():
         str1 += '{}: {}\n'.format(key, inventory[key])
-        return str1
+    return str1
