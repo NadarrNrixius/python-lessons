@@ -20,7 +20,7 @@ class Inventory:
                 key_exists = True
 
         if key_exists:
-            self.inv[key] += count
+            self.inv[name] += count
         else:
             self.inv[name] = count
 
@@ -42,17 +42,18 @@ class Inventory:
         #return a boolean indicating if the item is stocked or not
 
         key_exists = False
+        stocked = False
 
         for key in self.inv.keys():
             if key == name:
                 key_exists = True
                 if self.inv[name] > 0:
-                    return True
+                    stocked = True
                 else:
-                    return False
+                    stocked = False
 
-        if key_exists:
-            pass
+        if key_exists and stocked == True:
+            return True
         else:
             return False
 
@@ -60,17 +61,18 @@ class Inventory:
         #return a boolean indicating if there are at least count items in stock
 
         key_exists = False
+        stocked = False
 
         for key in self.inv.keys():
             if key == name:
                 key_exists = True
                 if self.inv[name] >= count:
-                    return True
+                    stocked = True
                 else:
-                    return False
+                    stocked = False
         
-        if key_exists:
-            pass
+        if key_exists and stocked == True:
+            return True
         else:
             return False
 

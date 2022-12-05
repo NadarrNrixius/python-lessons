@@ -1,6 +1,6 @@
 class Finance:
-    def __init__(self, num1):
-        self.bal = num1
+    def __init__(self, balance):
+        self.bal = balance
         self.log = []
 
     def debit(self, amount):
